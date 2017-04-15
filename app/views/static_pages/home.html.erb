@@ -14,18 +14,62 @@
     </div>
   </div>
 <% else %>
+  
   <div class="center jumbotron">
-    <h1>Welcome to the Sample App</h1>
+    <h1>Welcome to Mayberry Grove</h1>
 
-    <h2>
-      This is the home page for the
-      <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-      sample application.
-    </h2>
+    <h3>
+      <p>Click the button below & Sign up now to become a member.</p>
 
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+      <button onclick="myFunction()">Please Click me</button>
+
+      <p id="demo"></p>
+      <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+      <%= image_tag 'flowers.jpg', style: 'height: 50; align: center', alt: 'flowers pic' %>
+    </h3>
   </div>
+  
+  <h4>Sneak Peak of NEW Items coming soon!</h4>
+  
+<div class="gallery">
+  <a target="_blank" href="productone.jpg">
+     <%= image_tag "productone.jpg", width:"300", height:"200" %>
+  </a>
+  <div class="desc">Vintage Blackboard $40.00</div>
+</div>
 
-  <%= link_to image_tag("rails.png", alt: "Rails logo"),
-              'http://rubyonrails.org/' %>
+<div class="gallery">
+  <a target="_blank" href="producttwo.jpg">
+     <%= image_tag "producttwo.jpg", width:"300", height:"200" %>
+  </a>
+  <div class="desc">Vintage Cup Rack $25.00</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="productthree.jpg">
+    <%= image_tag "productthree.jpg", width:"300", height:"200" %>
+  </a>
+  <div class="desc">Vintage Bread Board $35.00</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="productfour.jpg">
+    <%= image_tag "productfour.jpg", width:"300", height:"200" %>
+  </a>
+  <div class="desc">Vintage Wall Clock $35.00</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="productfive.jpg">
+    <%= image_tag "productfive.jpg", width:"300", height:"200" %>
+  </a>
+  <div class="desc">Wodden Plate Holder $15.00</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="productsix.jpg">
+    <%= image_tag "productsix.jpg", width:"300", height:"200" %>
+  </a>
+  <div class="desc">Wodden Crate & Glasses $75.00</div>
+</div>
 <% end %>
