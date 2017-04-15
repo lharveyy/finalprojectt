@@ -10,13 +10,19 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get paint" do
-    get static_pages_paint_url
+    get paint_path
     assert_response :success
     assert_select "title", "Mayberry Grove"
   end
   
   test "should get about" do
-    get static_pages_about_url
+    get about_path
+    assert_response :success
+    assert_select "title", "Mayberry Grove"
+  end
+  
+   test "should get contact" do
+    get contact_path
     assert_response :success
     assert_select "title", "Mayberry Grove"
   end
