@@ -1,0 +1,46 @@
+kate:
+  content: "I love your paints!"
+  created_at: <%= 10.minutes.ago %>
+  user: lauren
+
+madison:
+  content: "I will be visiting again!"
+  created_at: <%= 3.years.ago %>
+  user: lauren
+
+Sara:
+  content: "Great Prices!!!"
+  created_at: <%= 2.hours.ago %>
+  user: lauren
+
+most_recent:
+  content: "Writing a short test"
+  created_at: <%= Time.zone.now %>
+  user: lauren
+  
+brenden:
+  content: "I like the many color options"
+  created_at: <%= 2.years.ago %>
+  user: archer
+
+breanna:
+  content: "Danger zone!"
+  created_at: <%= 3.days.ago %>
+  user: archer
+
+meagan:
+  content: "Great Customer Service"
+  created_at: <%= 10.minutes.ago %>
+  user: lana
+
+erica:
+  content: "Dude, this site is amazing"
+  created_at: <%= 4.hours.ago %>
+  user: lana
+
+<% 30.times do |n| %>
+micropost_<%= n %>:
+  content: <%= Faker::Lorem.sentence(5) %>
+  created_at: <%= 42.days.ago %>
+  user: lauren
+<% end %>
