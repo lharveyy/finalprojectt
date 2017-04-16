@@ -1,7 +1,12 @@
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body 
+
+$gray-medium-light: #eaeaea;
+
+
+body
 {
   padding-top: 60px;
 }
@@ -11,27 +16,29 @@ section
   overflow: auto;
 }
 
-textarea
+textarea 
 {
   resize: vertical;
 }
 
-.center 
+.center
 {
   text-align: center;
+  h1
+  {
+    margin-bottom: 60px;
+  }
 }
 
-.center h1 
-{
-  margin-bottom: 10px;
-}
+
+
 
 h1, h2, h3, h4, h5, h6 
 {
   line-height: 1;
 }
 
-h1
+h1 
 {
   font-size: 5em;
   letter-spacing: -2px;
@@ -41,19 +48,19 @@ h1
 
 h2 
 {
-  font-size: 3em;
-  font-style: italic;
+  font-size: 2.5em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: left;
   font-weight: normal;
-  color: #777;
+  color: $gray-light;
 }
 
 h4
 {
   color: red;
 }
+
 
 p 
 {
@@ -66,59 +73,86 @@ p
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
+  color: white;
+  text-transform: lowercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+  &:hover 
+  {
+    color: white;
+    text-decoration: none;
+  }
 }
 
-#logo:hover 
-{
-  color: #fff;
-  text-decoration: none;
-}
 
-footer 
+
+footer
 {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
+  border-top: 1px solid $gray-medium-light;
+  color: $gray-light;
+  a 
+  {
+    color: $gray;
+    &:hover
+    {
+      color: $gray-darker;
+    }
+  }
+  small
+  {
+    float: left;
+  }
+  ul
+  {
+    float: right;
+    list-style: none;
+    li
+    {
+      float: left;
+      margin-left: 15px;
+    }
+  }
 }
 
-footer a 
+aside
 {
-  color: #555;
+  section.user_info 
+  {
+    margin-top: 20px;
+  }
+  section
+  {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child 
+    {
+      border: 0;
+      padding-top: 0;
+    }
+    span
+    {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1
+    {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
 }
 
-footer a:hover 
-{
-  color: #222;
-}
-
-footer small 
-{
-  float: left;
-}
-
-footer ul 
-{
-  float: right;
-  list-style: none;
-}
-
-footer ul li 
-{
-  float: left;
-  margin-left: 15px;
-}
-
-.gravatar 
+.gravatar
 {
   float: left;
   margin-right: 10px;
-  color: #f692ac;
 }
 
 .gravatar_edit 
@@ -126,7 +160,54 @@ footer ul li
   margin-top: 15px;
 }
 
-input, textarea, select, .uneditable-input
+.stats
+{
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a 
+  {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child
+    {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover 
+    {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong 
+  {
+    display: block;
+  }
+}
+
+.user_avatars
+{
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar 
+  {
+    margin: 1px 1px;
+  }
+  a 
+  {
+    padding: 0;
+  }
+}
+
+.users.follow
+{
+  padding: 0;
+}
+
+input, textarea, select, .uneditable-input 
 {
   border: 1px solid #bbb;
   width: 100%;
@@ -148,15 +229,16 @@ input
   }
 }
 
-.field_with_errors 
+.field_with_errors
 {
   @extend .has-error;
-  .form-control
+  .form-control 
   {
     color: $state-danger-text;
   }
 }
-.checkbox 
+
+.checkbox
 {
   margin-top: -10px;
   margin-bottom: 10px;
@@ -166,6 +248,14 @@ input
     font-weight: normal;
   }
 }
+
+#session_remember_me 
+{
+  width: auto;
+  margin-left: 0;
+}
+
+
 .users
 {
   list-style: none;
@@ -177,24 +267,7 @@ input
   }
 }
 
-#session_remember_me 
-{
-  width: auto;
-  margin-left: 0;
-}
-.users 
-{
-  list-style: none;
-  margin: 0;
-  li 
-  {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
-  }
-}
-
-.microposts 
+.microposts
 {
   list-style: none;
   padding: 0;
@@ -216,6 +289,7 @@ input
     {
       display: block;
       padding: 5px 0;
+      margin: auto;
     }
   }
   .timestamp 
@@ -224,7 +298,7 @@ input
     display: block;
     margin-left: 60px;
   }
-  .gravatar
+  .gravatar 
   {
     float: left;
     margin-right: 10px;
@@ -236,25 +310,18 @@ aside
 {
   textarea 
   {
-    height: 100px;
+    height:100px;
     margin-bottom: 5px;
   }
 }
 
-span.picture
+span.picture 
 {
   margin-top: 10px;
-  input 
+  input
   {
     border: 0;
   }
-}
-
-img  
-{
-  display:block;
-  margin: auto;
-   padding-top: 50px;
 }
 
 div.gallery 
@@ -274,8 +341,8 @@ div.gallery:hover
 
 div.gallery img 
 {
-    width: 100%;
-    height: auto;
+   width: 100%;
+   height: auto;
 }
 
 div.desc
@@ -303,4 +370,18 @@ th, td
     padding: 8px;
     text-align: center;
     border-bottom: 1px solid #ddd;
+}
+
+.image1
+{
+  display:block;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.signupbtn
+{
+  margin:auto;
+  display:block;
+  width: 30%;
 }
